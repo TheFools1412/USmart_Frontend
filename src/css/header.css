@@ -1,0 +1,522 @@
+/* Reset styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* Giúp padding và border không làm tăng kích thước tổng */
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    /* Phông chữ hiện đại */
+    line-height: 1.6;
+    /* Tăng khả năng đọc */
+    color: #333;
+}
+
+/* Container chính - căn giữa và giới hạn chiều rộng */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* MAIN HEADER */
+.main-header {
+    background-color: white;
+    padding: 16px 0;
+    border-bottom: 1px solid #e5e7eb;
+    /* Line mỏng dưới header */
+}
+
+.logo-section {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+}
+
+.logo-container {
+    position: relative;
+    width: 48px;
+    height: 48px;
+}
+
+.logo-main {
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(135deg, #fb923c, #f97316);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+}
+
+.logo-dot-1,
+.logo-dot-2 {
+    position: absolute;
+    border-radius: 50%;
+}
+
+.logo-dot-1 {
+    bottom: -4px;
+    right: -4px;
+    width: 24px;
+    height: 24px;
+    background-color: #3b82f6;
+}
+
+.logo-dot-2 {
+    bottom: -8px;
+    right: -8px;
+    width: 16px;
+    height: 16px;
+    background-color: #10b981;
+}
+
+.logo-text h1 {
+    font-size: 32px;
+    font-weight: bold;
+    color: #1f2937;
+    /* Màu xám đậm */
+}
+
+.blue-text {
+    color: #3b82f6;
+}
+
+.tagline {
+    font-size: 14px;
+    color: #6b7280;
+    font-style: italic;
+}
+
+.action-buttons {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+/* Nút chung */
+.btn {
+    padding: 10px 24px;
+    border: none;
+    border-radius: 6px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-orange {
+    background-color: #f97316;
+    color: white;
+}
+
+.btn-orange:hover {
+    background-color: #ea580c;
+}
+
+.btn-blue {
+    background-color: #3b82f6;
+    color: white;
+}
+
+.btn-blue:hover {
+    background-color: #2563eb;
+}
+
+.user-id {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    border-radius: 8px;
+}
+
+.user-icon {
+    width: 24px;
+    height: 24px;
+    background-color: #f97316;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.user-id span {
+    color: #ea580c;
+    font-weight: 600;
+}
+
+/* NAVIGATION */
+.navigation {
+    background-color: white;
+    padding: 12px 0;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 32px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #6b7280;
+    font-weight: 500;
+    transition: color 0.2s;
+    display: flex;
+    align-items: center;
+}
+
+.nav-link:hover {
+    color: #1f2937;
+}
+
+.nav-link.active {
+    color: #3b82f6;
+}
+
+.dropdown-arrow {
+    margin-left: 4px;
+    font-size: 12px;
+}
+
+/* Dropdown Menu */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-toggle {
+    cursor: pointer;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    min-width: 200px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    border-radius: 6px;
+    padding: 8px 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    z-index: 1000;
+    border: 1px solid #e5e7eb;
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-15px) scale(0.95);
+    transform-origin: top center;
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-item {
+    display: block;
+    padding: 10px 16px;
+    color: #374151;
+    text-decoration: none;
+    transition: background-color 0.2s;
+    font-weight: 500;
+    text-align: left;
+}
+
+.dropdown-item:hover {
+    background-color: #f3f4f6;
+    color: #3b82f6;
+}
+
+.dropdown-arrow {
+    margin-left: 4px;
+    font-size: 12px;
+    transition: transform 0.2s;
+}
+
+.dropdown:hover .dropdown-arrow {
+    transform: rotate(180deg);
+}
+
+.search-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.search-icon {
+    font-size: 20px;
+    color: #666;
+    cursor: pointer;
+    padding: 8px;
+    transition: color 0.3s ease;
+    position: relative;
+    /* Thêm dòng này */
+    z-index: 10;
+}
+
+.search-icon:hover {
+    color: #3b82f6;
+}
+
+.search-bar {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    background: white;
+    border: 2px solid #e5e7eb;
+    border-radius: 20px;
+    padding: 5px 15px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+
+    /* Ẩn ban đầu */
+    width: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+/* Hiện khi hover vào wrapper */
+.search-wrapper:hover .search-bar {
+    width: 250px;
+    opacity: 1;
+}
+
+.search-input {
+    border: none;
+    outline: none;
+    width: 100%;
+    padding: 5px 0;
+    font-size: 14px;
+    background: transparent;
+}
+
+.search-input::placeholder {
+    color: #999;
+}
+
+/* SERVICE CARDS */
+.service-cards {
+    position: relative;
+    margin-top: -64px;
+    z-index: 20;
+    padding: 0 20px;
+}
+
+.cards-grid {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+}
+
+.service-card {
+    padding: 32px;
+    color: white;
+    position: relative;
+    overflow: hidden;
+    min-height: 120px;
+}
+
+.card-teal {
+    background-color: #14b8a6;
+}
+
+.card-blue {
+    background-color: #3b82f6;
+}
+
+.card-orange {
+    background-color: #f97316;
+}
+
+.card-icon {
+    position: relative;
+    z-index: 10;
+}
+
+.icon-border {
+    width: 48px;
+    height: 48px;
+    border: 2px solid white;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.rating-stars {
+    display: flex;
+    gap: 4px;
+}
+
+.star {
+    width: 8px;
+    height: 8px;
+    background-color: white;
+    border-radius: 50%;
+}
+
+.card-decoration {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    opacity: 0.2;
+}
+
+.decoration-circle,
+.decoration-circle-small,
+.decoration-dot,
+.decoration-dot-large {
+    border-radius: 50%;
+    background-color: white;
+}
+
+.decoration-circle {
+    width: 64px;
+    height: 64px;
+    border: 1px solid white;
+    position: relative;
+}
+
+.decoration-circle-small {
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    border: 1px solid white;
+}
+
+.decoration-dot {
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    top: 8px;
+    right: 8px;
+}
+
+.decoration-dot-large {
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    opacity: 0.5;
+}
+
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .search-wrapper {
+        width: 100%;
+        /* Full width trên mobile */
+        text-align: center;
+        /* Căn giữa */
+    }
+
+    .search-icon {
+        padding: 6px;
+        font-size: 18px;
+    }
+
+    .search-bar {
+        position: relative;
+        /* Thay đổi từ absolute sang relative */
+        transform: translateY(0);
+        /* Loại bỏ translateY */
+        width: 100%;
+        /* Full width khi hiện */
+        max-width: 300px;
+        /* Giới hạn chiều rộng tối đa */
+        margin: 10px auto;
+        /* Căn giữa với margin auto */
+        padding: 8px 15px;
+        border-radius: 25px;
+        /* Bo góc tròn hơn */
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        /* Thêm bóng đổ nhẹ */
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+    }
+
+    .search-wrapper:hover .search-bar {
+        opacity: 1;
+        visibility: visible;
+        width: 100%;
+        /* Mở rộng full khi hover */
+    }
+
+    .search-input {
+        font-size: 14px;
+    }
+
+    .container {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .main-header .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .action-buttons {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .nav-menu {
+        flex-wrap: wrap;
+        gap: 16px;
+        justify-content: center;
+    }
+
+    .hero-title {
+        font-size: 48px;
+    }
+
+    .hero-subtitle {
+        font-size: 20px;
+    }
+
+    .cards-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .floating-dots {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 36px;
+    }
+
+    .hero-subtitle {
+        font-size: 18px;
+    }
+
+    .btn {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+}

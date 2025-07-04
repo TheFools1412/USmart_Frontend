@@ -1,0 +1,692 @@
+/* Course Detail Styles */
+.course-detail {
+    min-height: 100vh;
+    background-color: white;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.course-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+.loading-state {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+    font-size: 1.125rem;
+    color: #6b7280;
+}
+
+.course-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+@media (max-width: 1024px) {
+    .course-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+}
+
+/* Image Section */
+.image-section {
+    max-width: 600px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.main-image-container {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    /* hoặc 600px tùy bạn */
+    border-radius: 0.5rem;
+    overflow: hidden;
+    margin-right: 340px;
+}
+
+@media (max-width: 1024px) {
+    .main-image-container {
+        margin-right: 0;
+    }
+}
+
+.image-magnifier-wrapper {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+}
+
+.image-magnifier-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    flex: 1;
+}
+
+.magnifier-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0.5rem;
+    display: block;
+}
+
+.magnifier-overlay {
+    position: absolute;
+    border: 2px solid #f97316;
+    background-color: rgba(249, 115, 22, 0.2);
+    pointer-events: none;
+    z-index: 10;
+}
+
+.magnifier-display {
+    position: relative;
+    z-index: 10;
+}
+
+.magnifier-zoom {
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 1024px) {
+    .magnifier-display {
+        position: fixed;
+        right: 1rem;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}
+
+@media (max-width: 768px) {
+    .image-magnifier-wrapper {
+        flex-direction: column;
+    }
+
+    .magnifier-display {
+        position: relative;
+        right: auto;
+        top: auto;
+        transform: none;
+        margin-top: 1rem;
+    }
+}
+
+.thumbnail-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+}
+
+.thumbnail {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    /* giữ tỷ lệ ảnh đẹp */
+    border-radius: 6px;
+    overflow: hidden;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.thumbnail:hover {
+    opacity: 0.9;
+    transform: scale(1.03);
+}
+
+.thumbnail.active {
+    border-color: #f97316;
+}
+
+.thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/* Course Info Section */
+.course-info-section {
+    display: flex;
+    flex-direction: column;
+}
+
+.course-header {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.course-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #111827;
+    margin: 0;
+}
+
+.teacher-info {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.teacher-label {
+    color: #6b7280;
+}
+
+.teacher-name {
+    color: #111827;
+    font-weight: 600;
+}
+
+.teacher-level {
+    color: #6b7280;
+    font-style: italic;
+}
+
+.stats-section {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.stat-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.stars {
+    display: flex;
+    gap: 0.125rem;
+}
+
+.star {
+    color: #d1d5db;
+    font-size: 1.25rem;
+}
+
+.star.filled {
+    color: #fbbf24;
+}
+
+.rating-number {
+    font-weight: 600;
+    color: #111827;
+}
+
+.students-count {
+    color: #6b7280;
+}
+
+.price-section {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 0.5rem 0;
+}
+
+.price {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #f97316;
+}
+
+.status-section {
+    margin: 0.5rem 0;
+}
+
+.status-text {
+    color: #6b7280;
+    margin: 0;
+}
+
+.quick-stats {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    padding: 1rem;
+    background-color: #f9fafb;
+    border-radius: 0.5rem;
+}
+
+.quick-stat {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #374151;
+    font-size: 0.875rem;
+}
+
+.icon {
+    font-size: 1rem;
+}
+
+.register-btn {
+    background-color: #3b82f6;
+    color: white;
+    padding: 0.75rem 2rem;
+    border-radius: 0.375rem;
+    font-size: 1.125rem;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    align-self: flex-start;
+}
+
+.register-btn:hover {
+    background-color: #2563eb;
+}
+
+/* Tabs Section */
+.tabs-section {
+    width: 100%;
+}
+
+.tabs-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    background-color: #f3f4f6;
+    padding: 0.25rem;
+    border-radius: 0;
+    height: auto;
+    width: 100%;
+    border: none;
+}
+
+.tab-trigger {
+    background-color: transparent;
+    color: #374151;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.tab-trigger.active {
+    background-color: #f97316;
+    color: white;
+}
+
+.tab-content {
+    margin-top: 2rem;
+}
+
+.tab-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* Content Styles */
+.content-prose {
+    max-width: none;
+}
+
+.section-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: #111827;
+}
+
+.subsection-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #374151;
+}
+
+.description-text {
+    color: #374151;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.description-section {
+    margin-bottom: 2rem;
+}
+
+.course-details-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.course-detail-item {
+    padding: 1rem;
+    background-color: #f9fafb;
+    border-radius: 0.5rem;
+    color: #374151;
+}
+
+.materials-section,
+.teaching-method-section {
+    margin-bottom: 2rem;
+}
+
+.materials-list,
+.method-list,
+.qualifications-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.material-item,
+.method-item,
+.qualification-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #374151;
+    padding: 0.5rem;
+    background-color: #f9fafb;
+    border-radius: 0.375rem;
+}
+
+.teacher-profile {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.teacher-avatar-section {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    padding: 1rem;
+    background-color: #f9fafb;
+    border-radius: 0.5rem;
+}
+
+.teacher-detail-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.teacher-basic-info h4 {
+    margin: 0 0 0.5rem 0;
+    color: #111827;
+}
+
+.teacher-basic-info p {
+    margin: 0.25rem 0;
+    color: #6b7280;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.stat-card {
+    text-align: center;
+    padding: 1.5rem;
+    background-color: #f9fafb;
+    border-radius: 0.5rem;
+}
+
+.stat-number {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #f97316;
+    display: block;
+}
+
+.stat-label {
+    color: #6b7280;
+    font-size: 0.875rem;
+    margin-top: 0.5rem;
+}
+
+.reviews-summary {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background-color: #f9fafb;
+    border-radius: 0.5rem;
+}
+
+.rating-overview {
+    display: flex;
+    justify-content: center;
+}
+
+.rating-score {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.score-number {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #f97316;
+}
+
+.total-reviews {
+    color: #6b7280;
+    font-size: 0.875rem;
+}
+
+.reviews-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.review-card {
+    border: 1px solid #e5e7eb;
+    border-radius: 0.5rem;
+    background-color: white;
+}
+
+.review-content {
+    padding: 1.5rem;
+}
+
+.review-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+}
+
+.reviewer-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.reviewer-name {
+    font-weight: 600;
+    color: #111827;
+}
+
+.review-date {
+    font-size: 0.875rem;
+    color: #6b7280;
+}
+
+.review-rating {
+    display: flex;
+    gap: 0.125rem;
+}
+
+.review-text {
+    color: #374151;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .course-container {
+    padding: 1.5rem;
+  }
+
+  .main-image-container {
+    margin-right: 0;
+    height: 450px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .course-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .image-section {
+    max-width: 100%;
+  }
+
+  .main-image-container {
+    height: 400px;
+  }
+
+  .magnifier-display {
+    position: fixed;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+@media (max-width: 768px) {
+  .course-container {
+    padding: 1rem;
+  }
+
+  .course-title {
+    font-size: 1.5rem;
+  }
+
+  .price {
+    font-size: 1.5rem;
+  }
+
+  .teacher-info {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .tabs-list {
+    grid-template-columns: 1fr;
+  }
+
+  .tab-trigger {
+    padding: 0.5rem 1rem;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .course-details-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .quick-stats {
+    flex-direction: column;
+  }
+
+  .thumbnail-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .teacher-avatar-section {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .image-magnifier-wrapper {
+    flex-direction: column;
+  }
+
+  .magnifier-display {
+    position: relative;
+    right: auto;
+    top: auto;
+    transform: none;
+    margin-top: 1rem;
+  }
+
+  .main-image-container {
+    height: 350px;
+  }
+}
+
+@media (max-width: 576px) {
+  .course-title {
+    font-size: 1.3rem;
+  }
+
+  .price {
+    font-size: 1.3rem;
+  }
+
+  .section-title {
+    font-size: 1.3rem;
+  }
+
+  .subsection-title {
+    font-size: 1rem;
+  }
+
+  .register-btn {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+  }
+
+  .main-image-container {
+    height: 300px;
+  }
+
+  .stat-number {
+    font-size: 1.5rem;
+  }
+
+  .score-number {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .thumbnail-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .main-image-container {
+    height: 250px;
+  }
+
+  .review-header {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .quick-stat {
+    width: 100%;
+  }
+}
