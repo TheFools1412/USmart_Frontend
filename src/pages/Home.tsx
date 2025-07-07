@@ -228,7 +228,7 @@ export default function Home() {
                                         <button className="home-register-btn" onClick={(openModal)}>
                                             Đăng ký
                                         </button>
-                                        <button className="home-details-btn" onClick={() => window.location.href = `/USmart_Frontend/course-detail?id=${course.id}`}>
+                                        <button className="home-details-btn" onClick={() => navigate(`/course-detail?id=${course.id}`)}>
                                             Chi tiết
                                         </button>
                                     </div>

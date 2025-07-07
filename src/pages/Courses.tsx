@@ -6,7 +6,7 @@ import RegistrationModal from "../components/Registration-modal.jsx"
 import HeaderImg from "../assets/images/1.jpg"
 import { useCoursesPage } from "../hooks/useCoursesPage.js";
 import { Link } from "react-router-dom"
-
+import { useNavigate } from 'react-router-dom';
 const CoursesPage: React.FC = () => {
 
   const {
@@ -24,6 +24,7 @@ const CoursesPage: React.FC = () => {
 
   const [isModalOpen, setIsModalOpen] = useState(false)
 
+  const navigate = useNavigate();
   // Function để mở modal
   const openModal = () => {
     setIsModalOpen(true)
@@ -201,7 +202,7 @@ const CoursesPage: React.FC = () => {
                     </button>
                     <button
                       className="detail-button"
-                      onClick={() => window.location.href = `/USmart_Frontend/course-detail?id=${course.id}`}
+                      onClick={() => navigate(`/course-detail?id=${course.id}`)}
                     >
                       Chi tiết
                     </button>
