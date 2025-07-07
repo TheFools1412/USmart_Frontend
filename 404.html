@@ -15,7 +15,11 @@
           prefix + pathname + window.location.search + window.location.hash;
         location.replace(newPath);
       } else {
-        // Nếu đã có prefix → load lại index.html để React xử lý
+        // ⚠️ QUAN TRỌNG: cập nhật history để giữ URL gốc
+        window.history.replaceState(null, null,
+          pathname + window.location.search + window.location.hash
+        );
+
         fetch(prefix + "/index.html")
           .then((res) => res.text())
           .then((html) => document.write(html));
