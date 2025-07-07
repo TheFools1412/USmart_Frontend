@@ -9,6 +9,7 @@ import avatar4 from '../assets/images/avatar4.jpg';
 import RegistrationModal from "../components/Registration-modal.jsx"
 import { useNavigate } from "react-router-dom"
 import { courses } from "../data/Courses.js"
+import { Link } from "react-router-dom";
 
 export default function Home() {
 
@@ -227,7 +228,7 @@ export default function Home() {
                                         <button className="home-register-btn" onClick={(openModal)}>
                                             Đăng ký
                                         </button>
-                                        <button className="home-details-btn" onClick={() => window.location.href = `/course-detail?id=${course.id}`}>
+                                        <button className="home-details-btn" onClick={() => window.location.href = `/USmart_Frontend/course-detail?id=${course.id}`}>
                                             Chi tiết
                                         </button>
                                     </div>

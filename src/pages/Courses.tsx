@@ -5,6 +5,7 @@ import "../data/Courses.js"
 import RegistrationModal from "../components/Registration-modal.jsx"
 import HeaderImg from "../assets/images/1.jpg"
 import { useCoursesPage } from "../hooks/useCoursesPage.js";
+import { Link } from "react-router-dom"
 
 const CoursesPage: React.FC = () => {
 
@@ -49,7 +50,7 @@ const CoursesPage: React.FC = () => {
       <div className="breadcrumb-container">
         <div className="breadcrumb">
           <span className="breadcrumb-item" style={{ cursor: "pointer" }}>
-            <a href='/' className="nav-link">Trang chủ</a>
+            <Link to ='/' className="nav-link">Trang chủ</Link>
           </span>
           <span className="breadcrumb-separator">›</span>
           <span className="breadcrumb-item active">{getBreadcrumbTitle()}</span>
@@ -200,7 +201,7 @@ const CoursesPage: React.FC = () => {
                     </button>
                     <button
                       className="detail-button"
-                      onClick={() => window.location.href = `/course-detail?id=${course.id}`}
+                      onClick={() => window.location.href = `/USmart_Frontend/course-detail?id=${course.id}`}
                     >
                       Chi tiết
                     </button>

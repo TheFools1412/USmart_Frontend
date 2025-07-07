@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import "../css/footer.css"
 
 export default function Footer() {
@@ -74,22 +75,22 @@ export default function Footer() {
             <h4 className="footer-links-title">Dịch vụ của chúng tôi</h4>
             <ul className="footer-links-list">
               <li>
-                <a href="#">Trang chủ</a>
+                <Link to="#">Trang chủ</Link>
               </li>
               <li>
-                <a href="#">Giới thiệu</a>
+                <Link to="#">Giới thiệu</Link>
               </li>
               <li>
-                <a href="#">Gia sư</a>
+                <Link to="#">Gia sư</Link>
               </li>
               <li>
-                <a href="#">Tất cả khóa học</a>
+                <Link to="#">Tất cả khóa học</Link>
               </li>
               <li>
-                <a href="#">Tin tức</a>
+                <Link to="#">Tin tức</Link>
               </li>
               <li>
-                <a href="#">Liên hệ</a>
+                <Link to="#">Liên hệ</Link>
               </li>
             </ul>
           </div>
@@ -99,22 +100,22 @@ export default function Footer() {
             <h4 className="footer-links-title">Về chúng tôi</h4>
             <ul className="footer-links-list">
               <li>
-                <a href="#">Trang chủ</a>
+                <Link to="#">Trang chủ</Link>
               </li>
               <li>
-                <a href="#">Giới thiệu</a>
+                <Link to="#">Giới thiệu</Link>
               </li>
               <li>
-                <a href="#">Gia sư</a>
+                <Link to="#">Gia sư</Link>
               </li>
               <li>
-                <a href="#">Tất cả khóa học</a>
+                <Link to="#">Tất cả khóa học</Link>
               </li>
               <li>
-                <a href="#">Tin tức</a>
+                <Link to="#">Tin tức</Link>
               </li>
               <li>
-                <a href="#">Liên hệ</a>
+                <Link to="#">Liên hệ</Link>
               </li>
             </ul>
           </div>

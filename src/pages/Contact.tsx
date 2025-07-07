@@ -1,6 +1,7 @@
 import type React from "react"
 import "../css/contact.css"
 import { useContactForm } from "../hooks/useContactForm";
+import { Link } from "react-router-dom";
 
 export default function ContactPage() {
     const {
@@ -19,7 +20,7 @@ export default function ContactPage() {
             <div className="breadcrumb-container">
                 <div className="breadcrumb">
                     <span className="breadcrumb-item" style={{ cursor: "pointer" }}>
-                        <a href='/' className="nav-link">Trang chủ</a>
+                        <Link to ='/' className="nav-link">Trang chủ</Link>
                     </span>
                     <span className="breadcrumb-separator">›</span>
                     <span className="breadcrumb-item active">Liên hệ</span>

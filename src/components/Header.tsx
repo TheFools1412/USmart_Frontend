@@ -4,6 +4,7 @@ import '../css/header.css';
 import RegistrationModal from "./Registration-modal"
 import TutorRegistrationModal from './Tutor-registration-modal';
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 
 export default function Header() {
@@ -41,7 +42,7 @@ export default function Header() {
             {/* Main Header */}
             <div className="main-header">
                 <div className="container">
-                    <a href="/" className="logo-section">
+                    <Link to ="/" className="logo-section">
                         <div className="logo-section">
                             <div className="logo-container">
                                 <div className="logo-main">🍎</div>
@@ -53,7 +54,7 @@ export default function Header() {
                                 <p className="tagline">Gia sư Hà Nội</p>
                             </div>
                         </div>
-                    </a>
+                    </Link>
 
                     <div className="action-buttons">
                         <button className="btn btn-orange" onClick={openTutorModal}>Đăng ký làm gia sư</button>
@@ -70,21 +71,21 @@ export default function Header() {
             <div className="navigation">
                 <div className="container">
                     <nav className="nav-menu">
-                        <a href="/" className="nav-link active">Trang chủ</a>
-                        <a href="/about" className="nav-link ">Giới thiệu</a>
+                        <Link to ="/" className="nav-link active">Trang chủ</Link>
+                        <Link to ="/about" className="nav-link ">Giới thiệu</Link>
                         <div className="dropdown">
-                            <a href="#" className="nav-link dropdown-toggle">
+                            <Link to="#" className="nav-link dropdown-toggle">
                                 Gia sư <span className="dropdown-arrow">▼</span>
-                            </a>
+                            </Link>
                             <div className="dropdown-menu">
-                                <a href="/courses?tutor=TH" className="dropdown-item">Gia sư TH</a>
-                                <a href="/courses?tutor=THCS" className="dropdown-item">Gia sư THCS</a>
-                                <a href="/courses?tutor=THPT" className="dropdown-item">Gia sư THPT</a>
+                                <Link to ="/courses?tutor=TH" className="dropdown-item">Gia sư TH</Link>
+                                <Link to ="/courses?tutor=THCS" className="dropdown-item">Gia sư THCS</Link>
+                                <Link to ="/courses?tutor=THPT" className="dropdown-item">Gia sư THPT</Link>
                             </div>
                         </div>
-                        <a href="/courses" className="nav-link">Tất cả khóa học</a>
-                        <a href="/new" className="nav-link">Tin tức</a>
-                        <a href="/contact" className="nav-link">Liên hệ</a>
+                        <Link to ="/courses" className="nav-link">Tất cả khóa học</Link>
+                        <Link to ="/new" className="nav-link">Tin tức</Link>
+                        <Link to ="/contact" className="nav-link">Liên hệ</Link>
                     </nav>
                     <div className="search-wrapper">
                         <div className="search-icon" onClick={handleSearch}>🔍</div>

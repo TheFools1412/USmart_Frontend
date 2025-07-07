@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { newsCategories, getFeaturedNews } from "../data/News";
 
 export default function NewsSidebar() {
@@ -63,15 +63,15 @@ export default function NewsSidebar() {
                                 </button>
                                 {category.name === "Gia sư" && showDropdown && (
                                     <div className="submenu">
-                                        <a href="/courses?tutor=TH" className="submenu-item">
+                                        <Link to="/courses?tutor=TH" className="submenu-item">
                                             Gia sư tiểu học
-                                        </a>
-                                        <a href="/courses?tutor=THCS" className="submenu-item">
+                                        </Link>
+                                        <Link to="/courses?tutor=THCS" className="submenu-item">
                                             Gia sư khối THCS
-                                        </a>
-                                        <a href="/courses?tutor=THPT" className="submenu-item">
+                                        </Link>
+                                        <Link to="/courses?tutor=THPT" className="submenu-item">
                                             Gia sư khối THPT
-                                        </a>
+                                        </Link>
                                     </div>
                                 )}
                             </div>

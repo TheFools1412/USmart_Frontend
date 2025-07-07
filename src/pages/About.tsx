@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import '../css/about.css';
 
 export default function About() {
@@ -7,7 +8,7 @@ export default function About() {
             <div className="breadcrumb-container">
                 <div className="breadcrumb">
                     <span className="breadcrumb-item" style={{ cursor: "pointer" }}>
-                        <a href='/' className="nav-link">Trang chủ</a>
+                        <Link to ='/' className="nav-link">Trang chủ</Link>
                     </span>
                     <span className="breadcrumb-separator">›</span>
                     <span className="breadcrumb-item active">Giới thiệu</span>

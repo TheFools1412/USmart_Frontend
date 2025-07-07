@@ -1,6 +1,6 @@
 import type React from "react"
 import { useEffect, useState } from "react"
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "../css/newDetail.css"
 import { newsArticles, newsCategories, getFeaturedNews, getNewsBySlug } from "../data/News"
 import type { NewsArticle } from "../types/new"
@@ -107,11 +107,11 @@ const NewsDetailPage: React.FC = () => {
             <div className="breadcrumb-container">
                 <div className="breadcrumb">
                     <span className="breadcrumb-item" style={{ cursor: "pointer" }}>
-                        <a href='/' className="nav-link">Trang chủ</a>
+                        <Link to ='/' className="nav-link">Trang chủ</Link>
                     </span>
                     <span className="breadcrumb-separator">›</span>
                     <span className="breadcrumb-item" style={{ cursor: "pointer" }}>
-                        <a href='/new' className="nav-link">Tin tức</a>
+                        <Link to ='/new' className="nav-link">Tin tức</Link>
                     </span>
                     <span className="breadcrumb-separator">›</span>
                     <span className="breadcrumb-item active">{article.title}</span>
