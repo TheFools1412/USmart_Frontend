@@ -12,14 +12,14 @@ import News from './pages/News'
 import NewDetail from "./components/NewDetail"
 import Footer from './components/Footer'
 import SearchPage from './components/SearchPage'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 
 function App() {
   return (
-    <Router>
+    <>
       <Header />
       <Routes>
-        <Route index element={<Home/>} />
+        <Route index element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/courses" element={<Courses />} />
         <Route path="/course-detail" element={<CourseDetail />} />
@@ -29,7 +29,7 @@ function App() {
         <Route path="/search" element={<SearchPage />} />
       </Routes>
       <Footer />
-    </Router>
+    </>
   )
 }
 
