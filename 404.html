@@ -9,14 +9,13 @@
       const prefix = "/USmart_Frontend";
       const pathname = window.location.pathname;
 
-      // Nếu đã bắt đầu bằng đúng prefix, không redirect nữa
+      // Nếu chưa có prefix → redirect
       if (!pathname.startsWith(prefix)) {
         const newPath =
           prefix + pathname + window.location.search + window.location.hash;
         location.replace(newPath);
       } else {
-        // Nếu đã là prefix rồi thì load lại đúng index.html để React xử lý
-        // Đây là key quan trọng: tải lại SPA khi vào từ 404.html
+        // Nếu đã có prefix → load lại index.html để React xử lý
         fetch(prefix + "/index.html")
           .then((res) => res.text())
           .then((html) => document.write(html));
