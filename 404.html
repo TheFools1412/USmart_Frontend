@@ -6,7 +6,12 @@
   </head>
   <body>
     <script>
-      location.replace("/USmart_Frontend" + location.pathname + location.search + location.hash);
+      const prefix = "/USmart_Frontend";
+      const current = window.location.pathname;
+
+      if (!current.startsWith(prefix)) {
+        location.replace(prefix + current + window.location.search + window.location.hash);
+      }
     </script>
   </body>
 </html>
